@@ -1,2 +1,0 @@
-git+https://github.com/z4r/python-trakt.git#egg=python-trackt
-git+https://github.com/doganaydin/themoviedb.git#egg=tmdb
