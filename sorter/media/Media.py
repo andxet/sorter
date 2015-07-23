@@ -293,10 +293,13 @@ class Paths(object):
 
     @staticmethod
     def addRoot(paths):
+        if isinstance(paths, basestring):
+            paths=[paths]
         for path in paths:
             if p.isdir(path):
                 if not path[-1] == '/':
                     path=path+'/'
+                print path
                 Paths.__rootpath.append(p.expanduser(path))
             else:
                 raise IOError('Cartella non esistente %s' % path)
@@ -335,24 +338,3 @@ class MediaType(object):
 
 
 medias = [Media, Video, Image, Picture, TvSeries, Archives, Document, Ignore, Draft, Comic, Music]
-
-
-if __name__ == "__main__":
-    sort(sys.argv)
-
-def sort():
-    argv= sys.argv
-    #Config.loadConfig()
-    if len(argv) < 2:
-        print "Utilizzo: [nome cartella di origine]* nome cartella di destinazione"
-        exit()
-    
-    if len(argv) == 2:
-        paths = ['.']
-    else:
-        paths = argv[1:-1]
-    
-    
-    Paths.addRoot(paths)
-    Paths.setStore(argv[-1])
-    MediaFactory.sortAll()

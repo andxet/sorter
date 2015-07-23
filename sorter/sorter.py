@@ -1,14 +1,14 @@
-from Media import MediaFactory as mp
+from media.Media import MediaFactory as mp
 #import Config
-import Media
+from media import Media
 import os.path as p
 import sys
 
-if __name__ == "__main__":
+def sort():
     argv= sys.argv
     #Config.loadConfig()
     if len(argv) < 2:
-        print "Utilizzo: [nome cartella di origine]* nome cartella di destinazione"
+        print "Utilizzo: [nome cartelle di origine]* nome cartella di destinazione"
         exit()
     
     if len(argv) == 2:
@@ -20,3 +20,6 @@ if __name__ == "__main__":
     Media.Paths.addRoot(paths)
     Media.Paths.setStore(argv[-1])
     mp.sortAll()
+
+if __name__ == "__main__":
+    sort()
