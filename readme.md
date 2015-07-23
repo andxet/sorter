@@ -9,7 +9,7 @@
 
 Il programma mostra l'elenco dei cambiamenti che farà, rispondere `yes` per confermare.
 
-###ATTENZIONE
+##ATTENZIONE
 Il programma è tuttora privo di una modalità safe, utilizzare solo in cartelle in cui non può combinare guai.
 **Il programma analizza tutti i file, qualunque essi siano, e li sposta se si preme y! Se eseguito su una cartella come la propria home provocherebbe notevoli disastri.**
 
