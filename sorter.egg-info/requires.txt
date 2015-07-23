@@ -1,2 +1,0 @@
-pyPdf==1.13
-configparser
